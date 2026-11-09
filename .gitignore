@@ -1,0 +1,40 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains Rider / ReSharper
+.idea/
+*.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+/_[Rr]e[Ss]harper*/
+
+# Visual Studio Code
+.vscode/
+
+# Test results
+[Tt]est[Rr]esult*/
+*.trx
+
+# Coverage
+coverage/
+coverage.*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

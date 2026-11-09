@@ -1,0 +1,15 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    platform: linux/amd64
+    container_name: mealplanner-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrongPassword123!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mealplanner-sql-data:/var/opt/mssql
+
+volumes:
+  mealplanner-sql-data:
