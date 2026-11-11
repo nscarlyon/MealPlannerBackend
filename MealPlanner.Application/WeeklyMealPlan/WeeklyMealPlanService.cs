@@ -76,7 +76,6 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
         {
             plan.Items.Add(new MealPlanItem
             {
-                Day = itemReq.Day,
                 Date = itemReq.Date,
                 SortOrder = itemReq.SortOrder,
                 MealId = itemReq.MealId,

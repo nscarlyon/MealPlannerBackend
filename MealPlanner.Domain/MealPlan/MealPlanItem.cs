@@ -6,8 +6,6 @@ public class MealPlanItem
 {
     public Guid Id { get; set; }
 
-    public DayOfWeek Day { get; set; }
-
     public DateOnly Date { get; set; }
 
     public int SortOrder { get; set; }

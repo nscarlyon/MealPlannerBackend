@@ -31,9 +31,6 @@ namespace MealPlanner.Infrastructure.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
-                    b.Property<int>("Day")
-                        .HasColumnType("int");
-
                     b.Property<Guid>("MealId")
                         .HasColumnType("uniqueidentifier");
 

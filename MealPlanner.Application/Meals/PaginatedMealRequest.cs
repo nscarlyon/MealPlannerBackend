@@ -4,19 +4,19 @@ using MealPlanner.Domain.Meals;
 
 namespace MealPlanner.Application.Meals;
 
-public class PaginatedMealRequest
+public record PaginatedMealRequest
 {
-    [Required] [Range(1, int.MaxValue)] public int PageNumber { get; set; } = 1;
+    [Range(1, int.MaxValue)] 
+    public int PageNumber { get; init; } = 1;
 
-    [Required]
     [AllowedValues(10, 20, 50, 100)]
-    public int PageSize { get; set; } = 10;
+    public int PageSize { get; init; } = 10;
 
-    public string? SearchTerm { get; set; }
+    public string? SearchTerm { get; init; }
 
-    public bool IsDescending { get; set; } = true;
+    public bool IsDescending { get; init; } = true;
 
-    public List<MealType> FilterByMealTypeList { get; set; } = [];
+    public List<MealType> FilterByMealTypeList { get; init; } = [];
 
-    public List<CuisineType> FilterByCuisineTypeList { get; set; } = [];
+    public List<CuisineType> FilterByCuisineTypeList { get; init; } = [];
 }

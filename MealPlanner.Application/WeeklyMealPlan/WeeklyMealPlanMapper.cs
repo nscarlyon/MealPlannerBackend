@@ -25,7 +25,6 @@ public static class WeeklyMealPlanMapper
         return new MealPlanItemResponse
         {
             Id = item.Id,
-            Day = item.Day,
             Date = item.Date,
             SortOrder = item.SortOrder,
             MealId = item.MealId,
@@ -46,7 +45,9 @@ public static class WeeklyMealPlanMapper
             {
                 plan.Items.Add(new MealPlanItem
                 {
-                    Day = itemReq.Day, Date = itemReq.Date, SortOrder = itemReq.SortOrder, MealId = itemReq.MealId
+                    Date = itemReq.Date,
+                    SortOrder = itemReq.SortOrder,
+                    MealId = itemReq.MealId
                 });
             }
         }
