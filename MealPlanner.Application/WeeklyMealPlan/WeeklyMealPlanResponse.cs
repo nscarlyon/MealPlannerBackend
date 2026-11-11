@@ -17,8 +17,6 @@ public record MealPlanItemResponse
 {
     public required Guid Id { get; init; }
 
-    public required DayOfWeek Day { get; init; }
-
     public required DateOnly Date { get; init; }
 
     public required int SortOrder { get; init; }
