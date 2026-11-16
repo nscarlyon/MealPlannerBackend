@@ -41,18 +41,22 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
             throw new InvalidWeekStartDateException(request.WeekStartDate);
         }
 
-        if (await context.WeeklyMealPlans.AnyAsync(x => x.WeekStartDate == request.WeekStartDate))
+        bool anyAsync = await context.WeeklyMealPlans.AnyAsync(x => x.WeekStartDate == request.WeekStartDate);
+        
+        if (anyAsync)
         {
             throw new WeeklyMealPlanAlreadyExistsException(request.WeekStartDate);
         }
 
         WeeklyMealPlan plan = WeeklyMealPlanMapper.ToEntity(request);
-        plan.WeekEndDate = request.WeekStartDate.AddDays(6);
         context.WeeklyMealPlans.Add(plan);
-
         await context.SaveChangesAsync();
+        WeeklyMealPlan createdPlan = await context.WeeklyMealPlans
+            .Include(x => x.Items)
+            .ThenInclude(x => x.Meal)
+            .SingleAsync(x => x.Id == plan.Id);
 
-        return WeeklyMealPlanMapper.ToResponse(plan);
+        return WeeklyMealPlanMapper.ToResponse(createdPlan);
     }
 
     public async Task<WeeklyMealPlanResponse> UpdateWeeklyMealPlan(Guid id, WeeklyMealPlanRequest request)
