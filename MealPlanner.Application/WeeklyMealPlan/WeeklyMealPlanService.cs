@@ -1,5 +1,5 @@
 using MealPlanner.Application.Exceptions;
-using MealPlanner.Domain.MealPlan;
+using MealPlanner.Infrastructure.Entities.MealPlan;
 using MealPlanner.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +10,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
 {
     public async Task<WeeklyMealPlanResponse> GetWeeklyMealPlanById(Guid id)
     {
-        Domain.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
             .AsNoTracking()
             .Include(x => x.Items)
             .ThenInclude(x => x.Meal)
@@ -23,7 +23,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
 
     public async Task<WeeklyMealPlanResponse?> GetWeeklyMealPlanByStartDate(DateOnly startDate)
     {
-        Domain.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
             .AsNoTracking()
             .Include(x => x.Items)
             .ThenInclude(x => x.Meal)
@@ -46,7 +46,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
             throw new WeeklyMealPlanAlreadyExistsException(request.WeekStartDate);
         }
 
-        Domain.MealPlan.WeeklyMealPlan plan = WeeklyMealPlanMapper.ToEntity(request);
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan plan = WeeklyMealPlanMapper.ToEntity(request);
         plan.WeekEndDate = request.WeekStartDate.AddDays(6);
         context.WeeklyMealPlans.Add(plan);
 
@@ -57,7 +57,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
 
     public async Task<WeeklyMealPlanResponse> UpdateWeeklyMealPlan(Guid id, WeeklyMealPlanRequest request)
     {
-        Domain.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
             .Include(x => x.Items)
             .FirstOrDefaultAsync(x => x.Id == id);
 
@@ -85,7 +85,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
 
         await context.SaveChangesAsync();
 
-        Domain.MealPlan.WeeklyMealPlan updatedPlan = await context.WeeklyMealPlans
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan updatedPlan = await context.WeeklyMealPlans
             .Include(x => x.Items)
             .ThenInclude(x => x.Meal)
             .SingleAsync(x => x.Id == id);
@@ -95,7 +95,7 @@ public class WeeklyMealPlanService(MealPlannerDbContext context) : IWeeklyMealPl
 
     public async Task DeleteWeeklyMealPlan(Guid id)
     {
-        Domain.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
+        Infrastructure.Entities.MealPlan.WeeklyMealPlan? plan = await context.WeeklyMealPlans
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (plan == null)

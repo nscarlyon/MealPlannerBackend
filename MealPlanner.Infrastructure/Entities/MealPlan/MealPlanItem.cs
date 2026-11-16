@@ -1,6 +1,6 @@
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.Meals;
 
-namespace MealPlanner.Domain.MealPlan;
+namespace MealPlanner.Infrastructure.Entities.MealPlan;
 
 public class MealPlanItem
 {

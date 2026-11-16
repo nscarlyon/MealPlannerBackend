@@ -1,4 +1,4 @@
-namespace MealPlanner.Domain.Meals;
+namespace MealPlanner.Infrastructure.Entities.Meals;
 
 public class Meal
 {
@@ -9,6 +9,7 @@ public class Meal
     public string? Description { get; set; }
 
     public int NumberOfServings { get; set; }
+    
     public bool IsDeleted { get; set; }
 
     public MealType Type { get; set; } = MealType.None;

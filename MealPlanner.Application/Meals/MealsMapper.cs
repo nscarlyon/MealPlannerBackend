@@ -1,4 +1,4 @@
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.Meals;
 
 namespace MealPlanner.Application.Meals;
 

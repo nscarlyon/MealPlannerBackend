@@ -1,4 +1,4 @@
-namespace MealPlanner.Domain.MealPlan;
+namespace MealPlanner.Infrastructure.Entities.MealPlan;
 
 public class WeeklyMealPlan
 {

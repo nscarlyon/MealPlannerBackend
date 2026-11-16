@@ -1,6 +1,6 @@
 ﻿using MealPlanner.Application.Exceptions;
 using MealPlanner.Application.Meals;
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.Meals;
 using MealPlanner.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using Moq;
 using Xunit;
 
 using MealIngredientDto = MealPlanner.Application.Meals.MealIngredient;
-using MealIngredientEntity = MealPlanner.Domain.Meals.MealIngredient;
+using MealIngredientEntity = MealPlanner.Infrastructure.Entities.Meals.MealIngredient;
 
 namespace MealPlanner.Tests.Application;
 

@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MealPlanner.Api\MealPlanner.Api.csproj"/>
     <ProjectReference Include="..\MealPlanner.Application\MealPlanner.Application.csproj"/>
-    <ProjectReference Include="..\MealPlanner.Domain\MealPlanner.Domain.csproj"/>
   </ItemGroup>
 
 </Project>
