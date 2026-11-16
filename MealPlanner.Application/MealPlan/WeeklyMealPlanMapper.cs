@@ -5,7 +5,7 @@ namespace MealPlanner.Application.MealPlan;
 
 public static class WeeklyMealPlanMapper
 {
-    public static WeeklyMealPlanResponse ToResponse(Infrastructure.Entities.MealPlan.WeeklyMealPlan plan)
+    public static WeeklyMealPlanResponse ToResponse(WeeklyMealPlan plan)
     {
         return new WeeklyMealPlanResponse
         {
@@ -32,11 +32,12 @@ public static class WeeklyMealPlanMapper
         };
     }
 
-    public static Infrastructure.Entities.MealPlan.WeeklyMealPlan ToEntity(WeeklyMealPlanRequest request)
+    public static WeeklyMealPlan ToEntity(WeeklyMealPlanRequest request)
     {
-        Infrastructure.Entities.MealPlan.WeeklyMealPlan plan = new()
+        WeeklyMealPlan plan = new()
         {
-            WeekStartDate = request.WeekStartDate, WeekEndDate = request.WeekStartDate.AddDays(6), Items = []
+            WeekStartDate = request.WeekStartDate, 
+            WeekEndDate = request.WeekStartDate.AddDays(6), Items = []
         };
 
         if (request.Items.Count != 0)
