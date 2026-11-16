@@ -1,6 +1,6 @@
 using MealPlanner.Application.Meals;
 
-namespace MealPlanner.Application.WeeklyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public record WeeklyMealPlanResponse
 {

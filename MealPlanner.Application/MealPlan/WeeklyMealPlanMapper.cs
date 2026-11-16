@@ -1,7 +1,7 @@
 using MealPlanner.Application.Meals;
 using MealPlanner.Infrastructure.Entities.MealPlan;
 
-namespace MealPlanner.Application.WeeklyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public static class WeeklyMealPlanMapper
 {
