@@ -1,4 +1,4 @@
-namespace MealPlanner.Domain.Meals;
+namespace MealPlanner.Infrastructure.Entities.Meals;
 
 public enum MealType
 {

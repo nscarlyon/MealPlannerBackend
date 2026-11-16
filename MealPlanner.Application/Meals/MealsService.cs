@@ -1,5 +1,5 @@
 ﻿using MealPlanner.Application.Exceptions;
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.Meals;
 using MealPlanner.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
@@ -155,7 +155,7 @@ public class MealsService(MealPlannerDbContext context) : IMealsService
                     existingIngredients.Add(ingredientName, ingredient);
                 }
 
-                meal.Ingredients.Add(new Domain.Meals.MealIngredient
+                meal.Ingredients.Add(new Infrastructure.Entities.Meals.MealIngredient
                 {
                     MealId = meal.Id,
                     Ingredient = ingredient,

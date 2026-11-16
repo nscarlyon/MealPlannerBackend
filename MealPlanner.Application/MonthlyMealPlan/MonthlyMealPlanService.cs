@@ -17,7 +17,7 @@ public class MonthlyMealPlanService(MealPlannerDbContext context) : IMonthlyMeal
         DateOnly monthStart = new(year, month, 1);
         DateOnly nextMonthStart = monthStart.AddMonths(1);
 
-        List<Domain.MealPlan.WeeklyMealPlan> weeklyMealPlans = await context.WeeklyMealPlans
+        List<Infrastructure.Entities.MealPlan.WeeklyMealPlan> weeklyMealPlans = await context.WeeklyMealPlans
             .AsNoTracking()
             .Where(w => w.WeekStartDate < nextMonthStart
                         && w.WeekEndDate >= monthStart)

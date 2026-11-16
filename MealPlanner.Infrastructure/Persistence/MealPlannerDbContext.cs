@@ -1,5 +1,5 @@
-using MealPlanner.Domain.MealPlan;
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.MealPlan;
+using MealPlanner.Infrastructure.Entities.Meals;
 
 using Microsoft.EntityFrameworkCore;
 

@@ -1,6 +1,6 @@
 using MealPlanner.Api.Controllers;
 using MealPlanner.Application.Meals;
-using MealPlanner.Domain.Meals;
+using MealPlanner.Infrastructure.Entities.Meals;
 
 using Microsoft.AspNetCore.Mvc;
 
