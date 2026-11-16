@@ -1,4 +1,4 @@
-using MealPlanner.Application.WeeklyMealPlan;
+using MealPlanner.Application.MealPlan;
 
 using Microsoft.AspNetCore.Mvc;
 

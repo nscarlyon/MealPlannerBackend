@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MealPlanner.Application.WeeklyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public class MustBeMonday : ValidationAttribute
 {

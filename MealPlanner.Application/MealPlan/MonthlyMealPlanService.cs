@@ -1,9 +1,8 @@
-using MealPlanner.Application.WeeklyMealPlan;
 using MealPlanner.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace MealPlanner.Application.MonthlyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public class MonthlyMealPlanService(MealPlannerDbContext context) : IMonthlyMealPlanService
 {

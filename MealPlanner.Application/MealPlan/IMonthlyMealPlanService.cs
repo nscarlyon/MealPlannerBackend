@@ -1,4 +1,4 @@
-namespace MealPlanner.Application.MonthlyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public interface IMonthlyMealPlanService
 {

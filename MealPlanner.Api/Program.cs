@@ -1,9 +1,8 @@
 using System.Text.Json.Serialization;
 
 using MealPlanner.Api.ExceptionHandling;
+using MealPlanner.Application.MealPlan;
 using MealPlanner.Application.Meals;
-using MealPlanner.Application.MonthlyMealPlan;
-using MealPlanner.Application.WeeklyMealPlan;
 using MealPlanner.Infrastructure.DependencyInjection;
 
 using Microsoft.AspNetCore.Mvc;

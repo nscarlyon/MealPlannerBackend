@@ -1,4 +1,4 @@
-namespace MealPlanner.Application.WeeklyMealPlan;
+namespace MealPlanner.Application.MealPlan;
 
 public record WeeklyMealPlanRequest
 {
